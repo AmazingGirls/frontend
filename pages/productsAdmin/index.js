@@ -61,6 +61,8 @@ export default function productsAdmin() {
       .post(`http://localhost:3001/products/save`, { name, desc })
       .then((res) => {
         console.log(res.data);
+        setName("")
+        setDesc("")
         GetAllProdect();
       })
       .catch((err) => {
@@ -118,6 +120,7 @@ export default function productsAdmin() {
                 placeholder="Product Name"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
+                value={name}
               />
               <FormControl
                 onChange={(event) => {
@@ -126,6 +129,7 @@ export default function productsAdmin() {
                 placeholder="Product Description"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
+                value={desc}
               />
 
               <Button 
